@@ -1,0 +1,13 @@
+# docker-compose.yaml
+version: '3.8'
+
+services:
+  agent:
+    container_name: jenkins_agent_server
+    image: jenkins/ssh-agent:jdk11
+    privileged: true
+    user: root
+    expose:
+      - 22
+    environment:
+      - JENKINS_AGENT_SSH_PUBKEY=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCIAT/3Gp0xo8m9pLPpT0z7sQGO/VyVXG7JmhFhvj/8gVJmNvEBxi6OK8GXaC9T1L4RQKfFJnLyTip8T5qRCGNKwJVgAxTknevpgqJ075O/IyqCiEaQ+zilfEI9r0iqFNlvLfDTtWOKyxSkwU0erJ1hKruoOudxSNyUoZMZXVbj7Vl4V81el36g9qw4I0Q/q2r4wrITg+breDFPdbziSAmNbFxwgUhIFMMRh43wTpNnz4s7YEVRODyCEN7C4zsLEcYzJt4Bb8Uc4GnlUR4MVpNiA9caKm8hA1hz9svV5aO/e20K5bPNgQKtg+7msy7JG2JrXcnIB7LbqoWWpqcZvlEi02StoKZbXItGOWdEkW7zKmYuclS1NEvNim/ybIyS13cJCTLxpc5Et3cj+xaqnhkoDX28FLnLOyWkelRtoZ5IZm/8eEFh/1sMRmqSC+2bK5Up4v4edGP0mYKEVe5EqHzzyeX26+rdL6mREhDqakoqPd4ofU3zO4ya6DJpIOmxIcjqd9hGE2mQE8I27Pxbz4f/GIVtEDXqU5+KFlOpREWaTj7JbxhQENAF2TqO7wq9syscQZZE0FJp+GYpfD32nYK5aS+YxMD9yjfRp4ESruXl3K3zNMCeMrjd7jTjeYtdsgN46aFi6x68R0YJ4bCiakxYedcmlqQ55LP0g7LlS9jabQ== ipas@nobu
